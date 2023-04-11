@@ -19,6 +19,6 @@ const MoviesList = ({ movies, location }) => {
 export default MoviesList;
 
 MoviesList.propTypes = {
-  movies: PropTypes.object.isRequired,
+  movies: PropTypes.array.isRequired,
   location: PropTypes.object.isRequired,
 }
