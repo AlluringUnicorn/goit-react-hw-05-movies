@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { Suspense } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import css from './MovieDetails.module.css';
@@ -11,6 +12,10 @@ const MovieDetails = () => {
   const movieId = useParams().movieId;
 
   const location = useLocation();
+  // console.log(location);
+
+  const backLinkLocationRef = useRef(location.state);
+
 
   useEffect(() => {
     fetch(
@@ -34,7 +39,7 @@ const MovieDetails = () => {
     return (
       <>
         <button className={css.button}>
-          <Link to={location.state} className={css.link}>
+          <Link to={backLinkLocationRef.current} className={css.link}>
             Go back
           </Link>
         </button>

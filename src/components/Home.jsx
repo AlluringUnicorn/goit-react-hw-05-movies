@@ -6,6 +6,7 @@ const Home = () => {
   const [movies, setMovies] = useState(null);
 
   const location = useLocation();
+  // console.log(location);
 
   useEffect(() => {
     fetch(
