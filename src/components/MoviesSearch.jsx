@@ -12,15 +12,6 @@ const MoviesSearch = ({ setMovies }) => {
     event.preventDefault();
 
     setSearchParams({ query: event.target[0].value });
-
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
-    )
-      .then(response => response.json())
-      .then(movies => {
-        // console.log(movies.results);
-        setMovies(movies.results);
-      });
   };
 
   useEffect(() => {
